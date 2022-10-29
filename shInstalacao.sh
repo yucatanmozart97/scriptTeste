@@ -27,7 +27,7 @@ then
 	sudo systemctl enable docker
 	sudo docker pull mysql:5.7
 	sudo docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
-	sudo docker exec -it PontoSa bash
+	sudo docker exec -it PontoSa -c "mysql --password=urubu100 --user=root --host=localhost"
 	source entrarMysql.sh
 else
 	echo "TESTE PARA VER SE FUNCIONA ELSE por que n ta aindo.............................................................................................................................................................................."
@@ -36,6 +36,6 @@ else
 	sudo systemctl enable docker
 	sudo docker pull mysql:5.7
 	sudo docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
-	sudo docker exec -it PontoSa bash
+	sudo docker exec -it PontoSa -c "mysql --password=urubu100 --user=root --host=localhost"
 	source entrarMysql.sh
 fi
